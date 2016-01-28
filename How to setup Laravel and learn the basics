@@ -1,0 +1,151 @@
+How to setup Laravel and learn the basics
+
+1. Install composer
+2. Install wamp or xampp or php so you can refrence php in the path of your global environment(i use wamp's php)
+2. install laravel locally or create a laravel project with composer(google it)
+	to set laravel environment variable run this command
+	# setx /M path "%path%;%appdata%\Composer\vendor\bin"
+	once set the variables 
+		# laravel new LaravelApp (run this cmd into the directory where you want your project to be created)
+	>for the first time creating a new laravel app takes some time but once it's cached it won't take much time next time
+3. once the laravel environment is downloaded and setup create a phpstorm project out of it
+4. There are three things you must know about
+	i. App/Http/routes.php (routes that defines the links in the urls)
+	ii. App/Http/Controllers (Controllers that are given tasks to perform)
+	iii. resources/views/ (The views that are static html files will be responsible for showing stuff; they are controlled by specific controllers that are created in the App/Http/controllers)
+
+5. now goto your laravelApp's root directory and run cmd
+	# php -S localhost:8888 -t public
+
+	> now open localhost:8888 and you will see your laravel app running make some changes and notice
+
+
+6. "# php artisan " is the main cmd used in laravel the most
+7. goto .env file and setup your database connection entries. config/database.php and you will see which db type you want to use
+7. laravel has a couple of necessary tables already created for you. For creating your database just simply do this
+	# php artisan migrate (and you will see your default tables created)
+8. #php artisan migrate:rollback (roles back the last table created and the iteration is defined in batch tab of laravel's default table(migrations) in the database)
+
+9. creating your own type of table # php artisan make:migration create_articles_table --create="articles"
+	--create defines default code for a table named articles inside the file that has been created in the migrations folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create your own migration
+	#php artican make:migration creating_my_migration_table --create"juni"
+	1. goto app folder and look for migrations folder you will see your migration listed there
+	2. edit the file as per the fields you want to create in the database
+	3. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The PATH for Windows:
+I’ve found the location where composer stores the Vendor files.
+
+So instead of ~/.composer/vendor/bin, on Windows the following path should be used:
+
+C:\Users\<COMPUTER NAME>\AppData\Roaming\Composer\vendor\bin
+
+
+How to install the Laravel Installer:
+I assume you have php and composer in your PATH already.
+
+First of all install the Laravel Installer. Open a command prompt and enter:
+
+composer global require "laravel/installer=~1.1"
+
+Then update the PATH environment variable via e.g. command prompt with admin privileges:
+
+setx /M path "%path%;%appdata%\Composer\vendor\bin"
+%appdata% is added, so you don’t have to worry about adding your computer name.
+
+
+How to create a fresh Laravel Installation:
+Now you should be able to run laravel commands in the command prompt.
+
+To create a fresh laravel installation, open a command prompt in the directory of choice and enter:
+
+laravel new name_of_directory
+If everything went right, you should see the following message:
+
+Crafting application...
+Application ready! Build something amazing.
